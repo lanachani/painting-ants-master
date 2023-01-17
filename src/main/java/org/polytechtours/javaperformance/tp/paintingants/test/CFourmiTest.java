@@ -5,17 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.polytechtours.javaperformance.tp.paintingants.CFourmi;
 import org.polytechtours.javaperformance.tp.paintingants.CPainting;
 import org.polytechtours.javaperformance.tp.paintingants.PaintingAnts;
 
 import java.awt.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class CFourmiTest {
@@ -34,7 +29,7 @@ class CFourmiTest {
         Dimension dimension = new Dimension(SIZE_DIMENSION, SIZE_DIMENSION);
         PaintingAnts paintingAnts = new PaintingAnts();
         CPainting cPainting = new CPainting(dimension, paintingAnts);
-        cFourmi = new CFourmi(Color.PINK, Color.RED, PROBA, PROBA, PROBA, PROBA, cPainting, 'r', COORD_X, COORD_Y, 0, 0, SEUIL_LUMINANCE, paintingAnts);
+        cFourmi = new CFourmi(Color.PINK, PROBA, PROBA, PROBA, PROBA, cPainting, 'r', 0, 0, SEUIL_LUMINANCE, paintingAnts);
     }
 
     // FIXME
