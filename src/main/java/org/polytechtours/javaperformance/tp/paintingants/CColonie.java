@@ -17,16 +17,27 @@ public class CColonie implements Runnable {
   private Vector<CFourmi> mColonie;
   private PaintingAnts mApplis;
 
-  /** Creates a new instance of CColonie */
+  /**
+   * Creates a new instance of CColonie.
+   * @param pColonie
+   * @param pApplis
+   */
   public CColonie(Vector<CFourmi> pColonie, PaintingAnts pApplis) {
     mColonie = pColonie;
     mApplis = pApplis;
   }
 
+  /**
+   * Stops the colonization.
+   */
   public void pleaseStop() {
     mContinue = false;
   }
 
+
+  /**
+   * Process of the colonization.
+   */
   @Override
   public void run() {
 
@@ -44,6 +55,10 @@ public class CColonie implements Runnable {
     }
   }
 
+  /**
+   * Checks if the colonization is running or not.
+   * @return True if the colonization continues, else false.
+   */
   public Boolean getmContinue() {
     return mContinue;
   }
