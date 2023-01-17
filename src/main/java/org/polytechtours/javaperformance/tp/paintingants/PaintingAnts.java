@@ -36,14 +36,13 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   public BufferedImage mBaseImage;
   private Timer fpsTimer;
 
-  /** Fourmis per second :) */
+  /* Fourmis per second :) */
   private Long fpsCounter = 0L;
-  /** stocke la valeur du compteur lors du dernier timer */
+  /* stocke la valeur du compteur lors du dernier timer */
   private Long lastFps = 0L;
 
   /**
-   * incrémenter le compteur
-   *
+   * Incrémente le compteur.
    */
   public void compteur() {
     synchronized (mMutexCompteur) {
@@ -52,8 +51,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Détruire l'applet
-   *
+   * Destroys the applet.
    */
   @Override
   public void destroy() {
@@ -65,19 +63,17 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Obtenir l'information Applet
-   *
+   * @return information Applet.
    */
   @Override
   public String getAppletInfo() {
     return "Painting Ants";
   }
 
-  /**
-   * Obtenir l'information Applet
-   *
-   */
 
+  /**
+   * @return Parameter information applet.
+   */
   @Override
   public String[][] getParameterInfo() {
     String[][] lInfo = { { "SeuilLuminance", "string", "Seuil de luminance" }, { "Img", "string", "Image" },
@@ -87,8 +83,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Obtenir l'état de pause
-   *
+   * @return State of break.
    */
   public boolean getPause() {
     return mPause;
@@ -98,9 +93,9 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     fpsCounter++;
   }
 
+
   /**
-   * Initialisation de l'applet
-   *
+   * Initialization of the applet.
    */
   @Override
   public void init() {
@@ -138,7 +133,8 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Paint the image and all active highlights.
+   * Paints the image and all active highlights.
+   * @param g
    */
   @Override
   public void paint(Graphics g) {
@@ -150,8 +146,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Mettre en pause
-   *
+   * Mettre en pause.
    */
   public void pause() {
     mPause = !mPause;
@@ -162,10 +157,9 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * cette fonction analyse une chaine :
-   * si pStr est un nombre : sa valeur est retournée
-   * si pStr est un interval x..y : une valeur au hasard dans [x,y] est
-   * retournée
+   * Analyse a sequence of characters.
+   * @param pStr
+   * @return pStr if it is a number, else a random value between x and y.
    */
   private float readFloatParameter(String pStr) {
     float lMin, lMax, lResult;
@@ -190,11 +184,11 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     return lResult;
   }
 
+
   /**
-  * cette fonction analyse une chaine :
-  * si pStr est un nombre : sa valeur est retournée
-  * si pStr est un interval x..y : une valeur au hasard dans [x,y] est
-  * retournée
+   * Reads the applet's params.
+   * @param pStr sequence of characters.
+   * @return pStr if it is a number, else a random value between x and y.
    */
   private int readIntParameter(String pStr) {
     int lMin, lMax, lResult;
@@ -217,7 +211,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-  * lecture des paramètres de l'applet
+   * Reads the applet's params.
    */
   private void readParameterFourmis() {
     String lChaine;
@@ -432,9 +426,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Titre : boolean testCouleur() Description : fonction testant l'égalité de
-   * deux couleurs
-   *
+   * Process painting of the applet.
    */
   @Override
   public void run() {
@@ -481,8 +473,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Lancer l'applet
-   *
+   * Launches the applet.
    */
   @Override
   public void start() {
@@ -509,8 +500,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * Arrêter l'applet
-   *
+   * Stops the applet.
    */
   @Override
   public void stop() {
@@ -530,7 +520,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   }
 
   /**
-   * update Fourmis per second
+   * Updates Fourmis Per Second.
    */
   private synchronized void updateFPS() {
     lastFps = fpsCounter;
