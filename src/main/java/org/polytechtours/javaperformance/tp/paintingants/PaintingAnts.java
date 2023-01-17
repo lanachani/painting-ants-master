@@ -41,7 +41,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
   /** stocke la valeur du compteur lors du dernier timer */
   private Long lastFps = 0L;
 
-  /****************************************************************************/
   /**
    * incrémenter le compteur
    *
@@ -52,7 +51,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     }
   }
 
-  /****************************************************************************/
   /**
    * Détruire l'applet
    *
@@ -66,7 +64,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     }
   }
 
-  /****************************************************************************/
   /**
    * Obtenir l'information Applet
    *
@@ -76,7 +73,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     return "Painting Ants";
   }
 
-  /****************************************************************************/
   /**
    * Obtenir l'information Applet
    *
@@ -90,7 +86,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     return lInfo;
   }
 
-  /****************************************************************************/
   /**
    * Obtenir l'état de pause
    *
@@ -103,7 +98,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     fpsCounter++;
   }
 
-  /****************************************************************************/
   /**
    * Initialisation de l'applet
    *
@@ -143,7 +137,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     setLayout(null);
   }
 
-  /****************************************************************************/
   /**
    * Paint the image and all active highlights.
    */
@@ -155,15 +148,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     }
     g.drawImage(mBaseImage, 0, 0, this);
   }
-  /****************************************************************************/
-  /****************************************************************************/
-  /****************************************************************************/
-  /****************************************************************************/
-  /****************************************************************************/
-  /****************************************************************************/
-  /****************************************************************************/
 
-  /****************************************************************************/
   /**
    * Mettre en pause
    *
@@ -176,11 +161,12 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     // }
   }
 
-  // =========================================================================
-  // cette fonction analyse une chaine :
-  // si pStr est un nombre : sa valeur est retournée
-  // si pStr est un interval x..y : une valeur au hasard dans [x,y] est
-  // retournée
+  /**
+   * cette fonction analyse une chaine :
+   * si pStr est un nombre : sa valeur est retournée
+   * si pStr est un interval x..y : une valeur au hasard dans [x,y] est
+   * retournée
+   */
   private float readFloatParameter(String pStr) {
     float lMin, lMax, lResult;
     // System.out.println(" chaine pStr: "+pStr);
@@ -204,11 +190,12 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     return lResult;
   }
 
-  // =========================================================================
-  // cette fonction analyse une chaine :
-  // si pStr est un nombre : sa valeur est retournée
-  // si pStr est un interval x..y : une valeur au hasard dans [x,y] est
-  // retournée
+  /**
+  * cette fonction analyse une chaine :
+  * si pStr est un nombre : sa valeur est retournée
+  * si pStr est un interval x..y : une valeur au hasard dans [x,y] est
+  * retournée
+   */
   private int readIntParameter(String pStr) {
     int lMin, lMax, lResult;
     StringTokenizer lStrTok = new StringTokenizer(pStr, ":");
@@ -229,8 +216,9 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     return lResult;
   }
 
-  // =========================================================================
-  // lecture des paramètres de l'applet
+  /**
+  * lecture des paramètres de l'applet
+   */
   private void readParameterFourmis() {
     String lChaine;
     int R, G, B;
@@ -328,20 +316,20 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
 
         // lecture de la position de la direction de départ et de la taille de
         // la trace
-        StringTokenizer lSTDéplacement = new StringTokenizer(lSTParam.nextToken(), ",");
-        lInit_x = readFloatParameter(lSTDéplacement.nextToken());
+        StringTokenizer lSTDeplacement = new StringTokenizer(lSTParam.nextToken(), ",");
+        lInit_x = readFloatParameter(lSTDeplacement.nextToken());
         if (lInit_x < 0.0 || lInit_x > 1.0) {
           lInit_x = (float) Math.random();
         }
-        lInit_y = readFloatParameter(lSTDéplacement.nextToken());
+        lInit_y = readFloatParameter(lSTDeplacement.nextToken());
         if (lInit_y < 0.0 || lInit_y > 1.0) {
           lInit_y = (float) Math.random();
         }
-        lInitDirection = readIntParameter(lSTDéplacement.nextToken());
+        lInitDirection = readIntParameter(lSTDeplacement.nextToken());
         if (lInitDirection < 0 || lInitDirection > 7) {
           lInitDirection = (int) (Math.random() * 8);
         }
-        lTaille = readIntParameter(lSTDéplacement.nextToken());
+        lTaille = readIntParameter(lSTDeplacement.nextToken());
         if (lTaille < 0 || lTaille > 3) {
           lTaille = (int) (Math.random() * 4);
         }
@@ -443,7 +431,7 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     // System.out.println("Nombre de Fourmis:"+lNbFourmis);
   }
 
-  /*************************************************************************************************
+  /**
    * Titre : boolean testCouleur() Description : fonction testant l'égalité de
    * deux couleurs
    *
@@ -492,7 +480,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     }
   }
 
-  /****************************************************************************/
   /**
    * Lancer l'applet
    *
@@ -521,7 +508,6 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
     mApplis.start();
   }
 
-  /****************************************************************************/
   /**
    * Arrêter l'applet
    *

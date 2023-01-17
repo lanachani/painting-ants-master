@@ -88,7 +88,7 @@ public class CFourmi {
     mNbDeplacements = 0;
   }
 
-  /*************************************************************************************************
+  /**
    * Titre : void deplacer() Description : Fonction de deplacement de la fourmi
    *
    */
@@ -184,26 +184,19 @@ public class CFourmi {
     mApplis.IncrementFpsCounter();
   }
 
-  /*************************************************************************************************
-  */
   public long getNbDeplacements() {
     return mNbDeplacements;
   }
-  /****************************************************************************/
 
-  /*************************************************************************************************
-  */
   public int getX() {
     return x;
   }
 
-  /*************************************************************************************************
-  */
   public int getY() {
     return y;
   }
 
-  /*************************************************************************************************
+  /**
    * Titre : modulo Description : Fcontion de modulo permettant au fourmi de
    * reapparaitre de l autre coté du Canvas lorsque qu'elle sorte de ce dernier
    *
@@ -216,7 +209,7 @@ public class CFourmi {
     return (x + m) % m;
   }
 
-  /*************************************************************************************************
+  /**
    * Titre : boolean testCouleur() Description : fonction testant l'égalité
    * d'une couleur avec la couleur suivie
    *
