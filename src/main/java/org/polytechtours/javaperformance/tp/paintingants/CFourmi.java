@@ -34,8 +34,23 @@ public class CFourmi {
   // nombre de déplacements de la fourmi
   private long mNbDeplacements;
 
-  /*************************************************************************************************
-  */
+  /**
+   * Creates a new instance of CFourmi.
+   * @param pCouleurDeposee
+   * @param pCouleurSuivie
+   * @param pProbaTD Probability to move forward.
+   * @param pProbaG Probability to turn left.
+   * @param pProbaD Probability to turn right.
+   * @param pProbaSuivre Probability to be followed.
+   * @param pPainting
+   * @param pTypeDeplacement
+   * @param pInit_x
+   * @param pInit_y
+   * @param pInitDirection
+   * @param pTaille
+   * @param pSeuilLuminance
+   * @param pApplis
+   */
   public CFourmi(Color pCouleurDeposee, Color pCouleurSuivie, float pProbaTD, float pProbaG, float pProbaD,
       float pProbaSuivre, CPainting pPainting, char pTypeDeplacement, float pInit_x, float pInit_y, int pInitDirection,
       int pTaille, float pSeuilLuminance, PaintingAnts pApplis) {
@@ -89,8 +104,7 @@ public class CFourmi {
   }
 
   /**
-   * Titre : void deplacer() Description : Fonction de deplacement de la fourmi
-   *
+   * Moves the ant.
    */
   public synchronized void deplacer() {
     float tirage, prob1, prob2, prob3, total;
@@ -184,35 +198,45 @@ public class CFourmi {
     mApplis.IncrementFpsCounter();
   }
 
+  /**
+   * Gets the ant's number of movements.
+   * @return
+   */
   public long getNbDeplacements() {
     return mNbDeplacements;
   }
 
+  /**
+   * Gets the coordinate X of the ant.
+   * @return
+   */
   public int getX() {
     return x;
   }
 
+  /**
+   * Gets the coordinate Y of the ant.
+   * @return
+   */
   public int getY() {
     return y;
   }
 
   /**
-   * Titre : modulo Description : Fcontion de modulo permettant au fourmi de
-   * reapparaitre de l autre coté du Canvas lorsque qu'elle sorte de ce dernier
-   *
+   * Allows the ant to reappear on the other side of the canvas
+   * when it leaves it.
    * @param x
-   *          valeur
-   *
-   * @return int
+   * @param m
+   * @return
    */
   private int modulo(int x, int m) {
     return (x + m) % m;
   }
 
   /**
-   * Titre : boolean testCouleur() Description : fonction testant l'égalité
-   * d'une couleur avec la couleur suivie
-   *
+   * Tests the equality of the color with the followed one.
+   * @param pCouleur
+   * @return True if the color is equal to the followed one, else false.
    */
   private boolean testCouleur(Color pCouleur) {
     boolean lReponse = false;
