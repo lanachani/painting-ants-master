@@ -40,7 +40,7 @@ class CColonieTest {
         Dimension dimension = new Dimension(SIZE_DIMENSION, SIZE_DIMENSION);
         PaintingAnts paintingAnts = new PaintingAnts();
         CPainting cPainting = new CPainting(dimension, paintingAnts);
-        CFourmi cFourmi = new CFourmi(Color.PINK, Color.RED, PROBA, PROBA, PROBA, PROBA, cPainting, 'r', COORD_X, COORD_Y, 0, 0, SEUIL_LUMINANCE, paintingAnts);
+        CFourmi cFourmi = new CFourmi(Color.PINK, PROBA, PROBA, PROBA, PROBA, cPainting, 'r', 0, 0, SEUIL_LUMINANCE, paintingAnts);
 
         Vector<CFourmi> cFourmiVector = new Vector<>();
         cFourmiVector.addElement(cFourmi);

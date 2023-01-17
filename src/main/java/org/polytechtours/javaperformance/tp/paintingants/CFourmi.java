@@ -37,13 +37,13 @@ public class CFourmi {
     /**
      * Creates a new instance of CFourmi.
      *
-     * @param pProbaTD         Probability to move forward.
-     * @param pProbaG          Probability to turn left.
-     * @param pProbaD          Probability to turn right.
-     * @param pProbaSuivre     Probability to be followed.
+     * @param pProbaTD     Probability to move forward.
+     * @param pProbaG      Probability to turn left.
+     * @param pProbaD      Probability to turn right.
+     * @param pProbaSuivre Probability to be followed.
      */
-    public CFourmi(Color pCouleurDeposee, Color pCouleurSuivie, float pProbaTD, float pProbaG, float pProbaD,
-                   float pProbaSuivre, CPainting pPainting, char pTypeDeplacement, float pInit_x, float pInit_y, int pInitDirection,
+    public CFourmi(Color pCouleurDeposee, float pProbaTD, float pProbaG, float pProbaD,
+                   float pProbaSuivre, CPainting pPainting, char pTypeDeplacement, int pInitDirection,
                    int pTaille, float pSeuilLuminance, PaintingAnts pApplis) {
 
         mCouleurDeposee = pCouleurDeposee;
@@ -105,7 +105,7 @@ public class CFourmi {
 
         mNbDeplacements++;
 
-      // le tableau dir contient 0 si la direction concernée ne contient pas la
+        // le tableau dir contient 0 si la direction concernée ne contient pas la
         // couleur
         // à suivre, et 1 sinon (dir[0]=gauche, dir[1]=tt_droit, dir[2]=droite)
         i = modulo(x + CFourmi.mIncDirection[modulo(mDirection - mDecalDir, 8)][0], mPainting.getLargeur());
@@ -145,7 +145,8 @@ public class CFourmi {
         tirage = GenerateurAleatoire.nextFloat();// Math.random();
 
         // la fourmi suit la couleur
-        if (((tirage <= mProba[3]) && ((dir[0] + dir[1] + dir[2]) > 0)) || ((dir[0] + dir[1] + dir[2]) == 3)) {
+        int sommeDir = dir[0] + dir[1] + dir[2];
+        if (((tirage <= mProba[3]) && (sommeDir > 0)) || (sommeDir == 3)) {
             prob1 = (dir[0]) * mProba[0];
             prob2 = (dir[1]) * mProba[1];
             prob3 = (dir[2]) * mProba[2];
@@ -167,7 +168,7 @@ public class CFourmi {
             mDirection = modulo(mDirection - mDecalDir, 8);
         } else {
             if (tirage >= prob2) {
-              mDirection = modulo(mDirection + mDecalDir, 8);
+                mDirection = modulo(mDirection + mDecalDir, 8);
             }
         }
 

@@ -2,8 +2,6 @@ package org.polytechtours.javaperformance.tp.paintingants;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -350,8 +348,8 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
                         "(" + lTypeDeplacement + "," + lProbaG + "," + lProbaTD + "," + lProbaD + "," + lProbaSuivre + ");");
 
                 // création de la fourmi
-                lFourmi = new CFourmi(lCouleurDeposee, lCouleurSuivie, lProbaTD, lProbaG, lProbaD, lProbaSuivre, mPainting,
-                        lTypeDeplacement, lInit_x, lInit_y, lInitDirection, lTaille, lSeuilLuminance, this);
+                lFourmi = new CFourmi(lCouleurDeposee, lProbaTD, lProbaG, lProbaD, lProbaSuivre, mPainting,
+                        lTypeDeplacement, lInitDirection, lTaille, lSeuilLuminance, this);
                 mColonie.addElement(lFourmi);
                 lNbFourmis++;
             }
@@ -410,8 +408,8 @@ public class PaintingAnts extends java.applet.Applet implements Runnable {
                         "(" + lTypeDeplacement + "," + lProbaG + "," + lProbaTD + "," + lProbaD + "," + lProbaSuivre + ");");
 
                 // création et ajout de la fourmi dans la colonie
-                lFourmi = new CFourmi(lTabColor[i], lTabColor[lColor], lProbaTD, lProbaG, lProbaD, lProbaSuivre, mPainting,
-                        lTypeDeplacement, lInit_x, lInit_y, lInitDirection, lTaille, lSeuilLuminance, this);
+                lFourmi = new CFourmi(lTabColor[i], lProbaTD, lProbaG, lProbaD, lProbaSuivre, mPainting,
+                        lTypeDeplacement, lInitDirection, lTaille, lSeuilLuminance, this);
                 mColonie.addElement(lFourmi);
             }
         }
