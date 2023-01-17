@@ -44,4 +44,7 @@ public class CColonie implements Runnable {
     }
   }
 
+  public Boolean getmContinue() {
+    return mContinue;
+  }
 }
