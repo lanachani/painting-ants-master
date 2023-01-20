@@ -15,13 +15,13 @@ import java.util.Vector;
 public class CColonie implements Runnable {
 
     private Boolean mContinue = Boolean.TRUE;
-    private final Vector<CFourmi> mColonie;
+    private final java.util.List<CFourmi> mColonie;
     private final PaintingAnts mApplis;
 
     /**
      * Creates a new instance of CColonie.
      */
-    public CColonie(Vector<CFourmi> pColonie, PaintingAnts pApplis) {
+    public CColonie(java.util.List<CFourmi> pColonie, PaintingAnts pApplis) {
         mColonie = pColonie;
         mApplis = pApplis;
     }
