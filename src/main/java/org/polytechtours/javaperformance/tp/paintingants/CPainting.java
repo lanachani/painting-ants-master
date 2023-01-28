@@ -30,6 +30,7 @@ public class CPainting extends Canvas implements MouseListener {
     // dimensions
     private final Dimension mDimension;
 
+
     private final PaintingAnts mApplis;
 
     private boolean mSuspendu = false;
