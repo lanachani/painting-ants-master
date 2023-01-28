@@ -26,6 +26,7 @@ public class Parameters extends java.applet.Applet {
 
     /**
      * Analyse a sequence of characters.
+     *
      * @return pStr if it is a number, else a random value between x and y.
      */
     private float readFloatParameter(String pStr) {
@@ -80,7 +81,7 @@ public class Parameters extends java.applet.Applet {
     /**
      * Create an ant from the parameters of the applet
      */
-    public void createFourmisParam(PaintingAnts paint, CPainting mPainting, List<CFourmi> mColonie){
+    public void createFourmisParam(PaintingAnts paint, CPainting mPainting, List<CFourmi> mColonie) {
         // on affiche la chaine de parametres
         System.out.println("Paramètres:" + lChaine);
 
@@ -174,7 +175,7 @@ public class Parameters extends java.applet.Applet {
     /**
      * Create a random ant
      */
-    public void createFourmisAlea(PaintingAnts paint, CPainting mPainting, List<CFourmi> mColonie){
+    public void createFourmisAlea(PaintingAnts paint, CPainting mPainting, List<CFourmi> mColonie) {
         int i;
         Color[] lTabColor = new Color[lNbFourmis];
         int lColor;
