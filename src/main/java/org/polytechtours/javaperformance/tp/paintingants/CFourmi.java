@@ -72,7 +72,16 @@ public class CFourmi {
             mDecalDir = 1;
         }
 
-        // initialisation du tableau des directions
+        initDirection();
+
+        mSeuilLuminance = pSeuilLuminance;
+        mNbDeplacements = 0;
+    }
+
+    /**
+     * initialisation du tableau des directions
+     */
+    public void initDirection(){
         CFourmi.mIncDirection[0][0] = 0;
         CFourmi.mIncDirection[0][1] = -1;
         CFourmi.mIncDirection[1][0] = 1;
@@ -89,9 +98,6 @@ public class CFourmi {
         CFourmi.mIncDirection[6][1] = 0;
         CFourmi.mIncDirection[7][0] = -1;
         CFourmi.mIncDirection[7][1] = -1;
-
-        mSeuilLuminance = pSeuilLuminance;
-        mNbDeplacements = 0;
     }
 
     /**
@@ -105,8 +111,7 @@ public class CFourmi {
 
         mNbDeplacements++;
 
-        // le tableau dir contient 0 si la direction concernée ne contient pas la
-        // couleur
+        // le tableau dir contient 0 si la direction concernée ne contient pas la couleur
         // à suivre, et 1 sinon (dir[0]=gauche, dir[1]=tt_droit, dir[2]=droite)
         i = modulo(x + CFourmi.mIncDirection[modulo(mDirection - mDecalDir, 8)][0], mPainting.getLargeur());
         j = modulo(y + CFourmi.mIncDirection[modulo(mDirection - mDecalDir, 8)][1], mPainting.getHauteur());
