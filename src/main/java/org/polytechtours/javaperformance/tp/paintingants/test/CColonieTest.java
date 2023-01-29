@@ -26,6 +26,9 @@ class CColonieTest {
     private CColonie cColonie;
 
     @Mock
+    private Graphics graphics;
+
+    @Mock
     private PaintingAnts paintingAnts;
 
     private final static float PROBA = 0.5F;

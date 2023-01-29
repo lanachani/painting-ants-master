@@ -25,7 +25,7 @@ public class Parameters extends java.applet.Applet {
     }
 
     /**
-     * Analyse a sequence of characters.
+     * Analyze a sequence of characters.
      *
      * @return pStr if it is a number, else a random value between x and y.
      */
